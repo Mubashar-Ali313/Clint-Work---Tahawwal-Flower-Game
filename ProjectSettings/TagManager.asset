@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Branch
+  - Flour
+  - Dates
+  - Ghee
+  - Honey
   layers:
   - Default
   - TransparentFX
