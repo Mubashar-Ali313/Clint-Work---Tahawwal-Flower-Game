@@ -12,7 +12,7 @@ public class Loadingscreen : MonoBehaviour
     public Slider loadingSlider;
     public TextMeshProUGUI loadingText;
     public float fakeLoadDuration = 5f; // Duration of fake loading in seconds
-
+    public GameObject mainScreenEnable;
 
 
     // Start is called before the first frame update
@@ -45,6 +45,10 @@ public class Loadingscreen : MonoBehaviour
         }
 
         loadingText.text = "Loading Complete!";
+        if(mainScreenEnable != null)
+        {
+            mainScreenEnable.SetActive(true);
+        }
         
         timer = 0f;
         //messageText.text = " Game is Ready!"; //  Your final message here

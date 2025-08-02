@@ -20,7 +20,7 @@ public class ZoomManager : MonoBehaviour
     private RectTransform selectedBranch;
     private Vector3 originalCamPosition;
     private float originalCamSize;
-    private bool isZoomed = false;
+    public bool isZoomed = false;
 
     void Start()
     {
@@ -100,7 +100,7 @@ public class ZoomManager : MonoBehaviour
         isZoomed = true;
     }
 
-    void ZoomOut()
+    public void ZoomOut()
     {
         StopAllCoroutines();
         StartCoroutine(SmoothZoom(originalCamPosition, originalCamSize));

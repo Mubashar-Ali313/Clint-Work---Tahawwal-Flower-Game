@@ -8,6 +8,10 @@ public class ClothingTracker : MonoBehaviour
     private int totalItems = 0;
     private int placedItems = 0;
 
+
+    
+
+
     [Header("UI Text for Placed Count")]
     public TextMeshProUGUI placedCounterText; //  UI Text Reference
 
@@ -62,6 +66,7 @@ public class ClothingTracker : MonoBehaviour
        
         timer = 0f;
         //messageText.text = " Game is Ready!"; //  Your final message here
+        Mod4.SetActive(true);
 
         //yield return new WaitForSeconds(2f); // Optional: wait before hiding
         StartloadingScreen.SetActive(false);

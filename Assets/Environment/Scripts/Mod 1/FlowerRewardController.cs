@@ -3,6 +3,8 @@ using UnityEngine;
 public class FlowerRewardController : MonoBehaviour
 {
     public GameObject rewardPanel;
+    public ZoomManager zoomManager;
+
 
     private bool rewardShown = false;
 
@@ -36,6 +38,10 @@ public class FlowerRewardController : MonoBehaviour
 
         // agar yahan tak aya to sab complete hain
         Debug.Log(" All flower slots complete! Showing reward panel.");
+        if (zoomManager.isZoomed)
+        {
+            zoomManager.ZoomOut();
+        }
         if (rewardPanel != null)
             rewardPanel.SetActive(true);
 
