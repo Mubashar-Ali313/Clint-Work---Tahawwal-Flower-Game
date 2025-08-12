@@ -4,6 +4,8 @@ public class FlowerRewardController : MonoBehaviour
 {
     public GameObject rewardPanel;
     public ZoomManager zoomManager;
+    public UiManager uiManager;
+    public LevelCompleteSound LevelCompleteSound;
 
 
     private bool rewardShown = false;
@@ -43,7 +45,13 @@ public class FlowerRewardController : MonoBehaviour
             zoomManager.ZoomOut();
         }
         if (rewardPanel != null)
+        {
+            
             rewardPanel.SetActive(true);
+            uiManager.inventry.SetActive(false);
+
+        }
+           
 
 
         rewardShown = true;

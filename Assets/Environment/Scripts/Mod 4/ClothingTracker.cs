@@ -18,6 +18,7 @@ public class ClothingTracker : MonoBehaviour
     public GameObject submitButton;
     public GameObject rewardedScreen;
     public GameObject Mod4;
+    public GameObject instructionScreen;
 
 
 
@@ -66,7 +67,7 @@ public class ClothingTracker : MonoBehaviour
        
         timer = 0f;
         //messageText.text = " Game is Ready!"; //  Your final message here
-        Mod4.SetActive(true);
+        instructionScreen.SetActive(true);
 
         //yield return new WaitForSeconds(2f); // Optional: wait before hiding
         StartloadingScreen.SetActive(false);
@@ -98,7 +99,7 @@ public class ClothingTracker : MonoBehaviour
     {
         if (placedCounterText != null)
         {
-            placedCounterText.text = "Placed: " + placedItems + " / " + totalItems;
+            placedCounterText.text =  placedItems + " / " + totalItems;
         }
     }
 

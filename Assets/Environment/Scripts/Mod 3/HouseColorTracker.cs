@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class HouseColorTracker : MonoBehaviour
 {
     [Header("UI / Reward")]
     public GameObject rewardPanel; // assign your reward window here
+    public GameObject mainpannel; // assign your reward window here
     public UnityEvent onAllColored; // optional hook
 
     private HouseColorChange[] spots;
@@ -31,7 +34,18 @@ public class HouseColorTracker : MonoBehaviour
         completed = true;
         Debug.Log(" Whole house is colored!");
         if (rewardPanel != null)
-            rewardPanel.SetActive(true);
+        {
+            StartCoroutine(showRewardedScreen());
+        }
+            
         onAllColored?.Invoke();
     }
+
+    IEnumerator showRewardedScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        rewardPanel.SetActive(true);
+        mainpannel.SetActive(false);
+    }
+
 }

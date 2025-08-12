@@ -38,8 +38,29 @@ public class ObjectSwitcher : MonoBehaviour
     {
         if (rewardScreen != null)
             rewardScreen.SetActive(false);
+        //StartTimer();
+
+        if (PlayerPrefs.HasKey("playerName"))
+        {
+            string playerName = PlayerPrefs.GetString("playerName");
+            badgename.text =  playerName + "!";
+        }
+        else
+        {
+            badgename.text = "Welcome, Guest!";
+        }
+
+
+
+    }
+
+
+    // start countdown for game
+    public void OnVideoDisable()
+    {
         StartTimer();
     }
+
 
 
 

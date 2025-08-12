@@ -6,6 +6,9 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
+
+    
+
     [Header ( " Loading ")]
     public GameObject StartloadingScreen;
     public Slider loadingSlider;
@@ -13,7 +16,8 @@ public class UiManager : MonoBehaviour
     // public Text messageText; //  New Text field for end message
 
 
-    [SerializeField] GameObject homeScreen;
+    public GameObject homeScreen;
+    public GameObject NameinputScreen;
     [SerializeField] GameObject modeSelectionScreen;
     public GameObject mode1;
     public GameObject inventry;
@@ -45,7 +49,21 @@ public class UiManager : MonoBehaviour
         }
 
         loadingText.text = "Loading Complete!";
-        homeScreen.SetActive(true);
+        //homeScreen.SetActive(true);
+
+        if (PlayerPrefs.HasKey("playerName"))
+        {
+            // Naam already saved direct start panel
+            NameinputScreen.SetActive(false);
+            homeScreen.SetActive(true);
+        }
+        else
+        {
+            // Pehli dafa  name input panel
+            NameinputScreen.SetActive(true);
+            homeScreen.SetActive(false);
+        }
+
         timer = 0f;
         //messageText.text = " Game is Ready!"; //  Your final message here
 
